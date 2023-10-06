@@ -2,7 +2,7 @@
 ### collection of Object Files that are bundled together 
 ### into a single Archive File (.a)
 
-### the process to create an Static Library is:
+### the process to create a Static Library is:
 
 ## compile C Source Files into Object Files
 ## "-c" means to Compile and Assemble but do not Link
