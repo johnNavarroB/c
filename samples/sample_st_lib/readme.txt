@@ -38,7 +38,7 @@ nm libft.a
 
 ## ft_isalpha.c: source code of the library
 ## test_isalpha.c: source code containing the main() function
-## ft_isalpha,o: object file
+## ft_isalpha.o: object file
 ## libft.h: header file
 ## libtest.a: static library
 
