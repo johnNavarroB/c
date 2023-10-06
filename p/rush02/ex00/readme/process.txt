@@ -1,0 +1,77 @@
+# Makefile: describes how the program should be built
+#    -> it's composed of rules
+#    -> the rules can be used to automate the build phase
+#
+my_rule: file.C
+  gcc file.c -o file.exe
+#
+# The "my_rule" rule in the example above, contains a dependency "file.c"
+# If the dependency requisits are met, the "gcc" recipe is executed to create the "file.exe" executable
+#
+# If "make my_rule" is executed, Make will check if "file.c" dependency has changed.
+# If so, it will run that rule and build that "file.exe" binary
+#
+# There is an "all" rule that is run by default, executing just "make"
+#
+all: my_rule
+#
+# Make supports the definition of variables with the following syntax:
+#
+NAME=rush-02
+CC=gcc
+CFLAGS=-Wall -Wextra -Werror
+
+ft_main.o: ./functions/ft_main.c
+	$(CC) -c ./functions/ft_main.c -o ./objects/ft_main.o
+
+main.o: ./main.c
+	$(CC) -c ./main.c -o ./objects/main.o
+
+$(NAME): ft_main.o main.o
+	$(CC) $(CFLAGS) ./objects/ft_main.o ./objects/main.o -o $(NAME).exe
+
+clean:
+	rm ./objects/*.o
+
+fclean: clean
+	rm ./rush-02.exe
+#
+# Make supports what is called "automatic variables":
+#
+TARGET = output.txt
+
+$(TARGET): file1.txt file2.txt
+	cat $^ > $@
+#
+# -> $^ represents all the dependency file names
+# -> $@ represents the target file name, which is the name of the rule "output.txt"
+#
+# -> $< represents the first dependency file name
+# -> $? represents the dependency file names that are newer than the target file
+# -> $* represents the target file name without the extension
+#
+# This sample recipe concatenates the content of all the dependencies ($^) into the target file ($@) which is output.txt
+###################################################################
+#
+# THE COMPILATION PROCESS OF A C PROGRAM CONSISTS OF SEVERAL STEPS
+# 1. preprocessing (e.g. "#define" statements)
+# 2. compiling (to object files)
+#    -> .o contain machine code specific to the source code
+#    -> data about variables and functions
+# 3. linking (object files to resolve dependencies)
+#    -> building blocks to create the final executable
+#    -> contain compiled code for individual source files
+#    -> are not yet directly executable
+# CREATE THE OBJECT FILES
+#
+gcc -c ./main.c -o ./objects/main.o
+gcc -c ./functions/ft_main.c -o ./objects/ft_main.o
+#
+# LINK THE OBJECT FILES
+#
+(Windows)
+gcc -Wall -Wextra -Werror ./objects/ft_main.o ./objects/main.o -o rush-02.exe
+(Unix)
+gcc -Wall -Wextra -Werror ./objects/ft_main.o ./objects/main.o -o rush-02.out
+(this project)
+cc -Wall -Wextra -Werror ./objects/ft_main.o ./objects/main.o -o rush-02
