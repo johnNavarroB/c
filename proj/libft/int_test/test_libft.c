@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "testing.h"
-#include <stdio.h>
 
 int	test_isdigit(char c, int expected)
 {
@@ -86,8 +85,25 @@ void	isalnum_ok()
 
 int	main(void)
 {
-	isalpha_ok();
-	isdigit_ok();
-	isalnum_ok();
+	char	test_string[14];
+	int		index;
+
+	ft_memset(test_string, '6', 14 * sizeof(char));
+	ft_memset(test_string + 3, 'X', 4 * sizeof(char));
+	index = 0;
+	while (index < 14)
+	{
+		printf("%c", test_string[index]);
+		index ++;
+	}
+	printf("\n");
+	ft_bzero(test_string, 14 * sizeof(char));
+	index = 0;
+	while (index < 14)
+	{
+		printf("%c", test_string[index]);
+		index ++;
+	}
+	printf("\n");
 	return (0);
 }
