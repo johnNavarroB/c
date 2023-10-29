@@ -25,5 +25,7 @@ int		ft_strlen(char c);
 
 void	*ft_memset(void *b, int character, size_t length);
 void	ft_bzero(void *b, size_t length);
+void	*ft_memcpy(void *destination, const void *source, size_t length);
+void	*ft_memmove(void *destination, const void *source, size_t length);
 
 #endif
