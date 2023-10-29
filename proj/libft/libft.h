@@ -30,4 +30,7 @@ void	*ft_memmove(void *destination, const void *source, size_t length);
 size_t	ft_strlcpy(char *destination, const char *source, size_t length);
 size_t	ft_strlcat(char *destination, const char *source, size_t length);
 
+int		ft_toupper(int character);
+int		ft_tolower(int character);
+
 #endif
