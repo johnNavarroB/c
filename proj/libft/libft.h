@@ -38,4 +38,7 @@ char	*ft_strrchr(const char *string, int character);
 
 int		ft_strncmp(const char *ptr_find, const char *ptr_str, size_t length);
 
+void	*ft_memchr(const void *ptr_str, int character, size_t length);
+int		ft_memcmp(const void *ptr_find, const void *ptr_str, size_t length);
+
 #endif
