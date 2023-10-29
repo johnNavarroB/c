@@ -36,4 +36,6 @@ int		ft_tolower(int character);
 char	*ft_strchr(const char *string, int character);
 char	*ft_strrchr(const char *string, int character);
 
+int		ft_strncmp(const char *ptr_find, const char *ptr_str, size_t length);
+
 #endif
