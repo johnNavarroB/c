@@ -41,4 +41,8 @@ int		ft_strncmp(const char *ptr_find, const char *ptr_str, size_t length);
 void	*ft_memchr(const void *ptr_str, int character, size_t length);
 int		ft_memcmp(const void *ptr_find, const void *ptr_str, size_t length);
 
+char	*ft_strnstr(const char *string, const char *to_find, size_t length);
+
+int		ft_atoi(const char *value);
+
 #endif
