@@ -45,4 +45,8 @@ char	*ft_strnstr(const char *string, const char *to_find, size_t length);
 
 int		ft_atoi(const char *value);
 
+void	*ft_calloc(size_t amount, size_t size);
+
+char	*ft_strdup(const char *string);
+
 #endif
