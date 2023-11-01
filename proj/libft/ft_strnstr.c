@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static	int	ft_substr(const char *str1, const char *substr, size_t l, int i)
+static	int	ft_fndstr(const char *str1, const char *substr, size_t l, int i)
 {
 	int	j;
 
@@ -42,7 +42,7 @@ char	*ft_strnstr(const char *string, const char *to_find, size_t length)
 	while (index < (int) length && string[index] != 0)
 	{
 		if (string[index] == to_find[0])
-			if (ft_substr(string, to_find, length, index))
+			if (ft_fndstr(string, to_find, length, index))
 				return ((char *) ptr_found + index);
 		index ++;
 	}

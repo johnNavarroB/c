@@ -50,4 +50,6 @@ void	*ft_calloc(size_t amount, size_t size);
 
 char	*ft_strdup(const char *string);
 
+char	*ft_substr(const char *string, unsigned int start, size_t length);
+
 #endif

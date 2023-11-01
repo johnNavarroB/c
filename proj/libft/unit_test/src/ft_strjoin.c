@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jonnavar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 20:10:23 by jonnavar          #+#    #+#             */
-/*   Updated: 2023/10/31 20:25:03 by jonnavar         ###   ########.fr       */
+/*   Created: 2023/11/01 20:05:35 by jonnavar          #+#    #+#             */
+/*   Updated: 2023/11/01 20:14:24 by jonnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdlib.h>
 
-void	*ft_calloc(size_t amount, size_t size)
+char	*ft_strjoin(const char *string, const char *to_join)
 {
-	void	*pointer;
-	int		index;
+	char	*pointer;
+	int		length;
+	int		join_length;
 
-	index = 0;
-	pointer = malloc(amount * size);
-	if (pointer == 0)
+	if (!string || !to_join)
 		return ((void *) 0);
-	while (index < (int) amount)
-		((char *) pointer)[index ++] = 0;
+	length = ft_strlen(string);
+	join_length = ft_strlen(to_join);
+	pointer = (char *) ft_calloc(length + join_length, sizeof(char));
+	if (!pointer)
+		return ((void *) 0);
+	ft_memcpy(pointer, string, length);
+	ft_memcpy(pointer + length, to_join, join_length);
 	return (pointer);
 }
