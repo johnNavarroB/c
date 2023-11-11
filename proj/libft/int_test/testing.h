@@ -51,5 +51,8 @@ void	*ft_calloc(size_t amount, size_t size);
 char	*ft_strdup(const char *string);
 
 char	*ft_substr(const char *string, unsigned int start, size_t length);
+char	*ft_strjoin(const char *string, const char *to_join);
+char	*ft_strtrim(const char *string, const char *characters);
+char	**ft_split(const char *str, const char c);
 
 #endif

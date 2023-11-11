@@ -22,6 +22,7 @@ static	void	ft_copy(char *dest, const char *source, int start, int length)
 		index ++;
 		length --;
 	}
+	dest[index] = 0;
 }
 
 static	char	*ft_allocate(const char *string, int start, int length)
@@ -31,7 +32,7 @@ static	char	*ft_allocate(const char *string, int start, int length)
 	index = 0;
 	while (string[start + index] != 0 && index < length)
 		index ++;
-	return ((char *) ft_calloc(index, sizeof(char)));
+	return ((char *) ft_calloc(index + 1, sizeof(char)));
 }
 
 char	*ft_substr(const char *string, unsigned int start, size_t length)
