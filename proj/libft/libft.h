@@ -54,5 +54,7 @@ char	*ft_strjoin(const char *string, const char *to_join);
 char	*ft_strtrim(const char *string, const char *characters);
 char	**ft_split(const char *str, const char c);
 char	*ft_itoa(int value);
+char	*ft_strmapi(const char *string, char (*function)(unsigned int, char));
+void	ft_striteri(char *string, void (*function)(unsigned int, char*));
 
 #endif
