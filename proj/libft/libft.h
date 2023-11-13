@@ -12,6 +12,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <unistd.h>
 # include <stdlib.h>
 
 int		ft_isalpha(char c);
@@ -56,5 +57,9 @@ char	**ft_split(const char *str, const char c);
 char	*ft_itoa(int value);
 char	*ft_strmapi(const char *string, char (*function)(unsigned int, char));
 void	ft_striteri(char *string, void (*function)(unsigned int, char*));
+void	ft_putchar_fd(char character, int file_descriptor);
+void	ft_putstr_fd(char *string, int file_descriptor);
+void	ft_putendl_fd(char *string, int file_descriptor);
+void	ft_putnbr_fd(int value, int file_descriptor);
 
 #endif
