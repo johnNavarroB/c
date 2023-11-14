@@ -15,6 +15,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+typedef struct s_list
+{
+	void			*data;
+	struct s_list	*next_node;
+}	t_list;
+
 int		ft_isalpha(char c);
 int		ft_isdigit(char c);
 int		ft_isalnum(char c);
@@ -61,5 +67,7 @@ void	ft_putchar_fd(char character, int file_descriptor);
 void	ft_putstr_fd(char *string, int file_descriptor);
 void	ft_putendl_fd(char *string, int file_descriptor);
 void	ft_putnbr_fd(int value, int file_descriptor);
+
+t_list	*ft_lstnew(void *data);
 
 #endif
