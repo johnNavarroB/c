@@ -69,5 +69,7 @@ void	ft_putendl_fd(char *string, int file_descriptor);
 void	ft_putnbr_fd(int value, int file_descriptor);
 
 t_list	*ft_lstnew(void *data);
+void	ft_lstadd_front(t_list **list, t_list *new_node);
+int		ft_lstsize(t_list *list);
 
 #endif
